@@ -6,5 +6,4 @@ make-migration:
 	@$(MANAGE) makemigrations
 migrate: make-migration
 	@$(MANAGE) migrate
-build:
-	install migrate
+build: install migrate
