@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from task_manager.forms import Form
+from django.views import View
 
 
-def index(request):
-    return render(request, 'index.html', context={'who': 'World'})
+class FormView(View):
+    def get(self, request, *args, **kwargs):
+        form = Form()
+        return render(request, 'index.html', {'form': form})
