@@ -1,0 +1,12 @@
+[
+  {
+    "model": "users.customuser",
+    "fields": {
+      "username": "BobMarley",
+      "first_name": "Bob",
+      "last_name": "Marley",
+      "password1": "z1",
+      "password2": "z1"
+    }
+  }
+]

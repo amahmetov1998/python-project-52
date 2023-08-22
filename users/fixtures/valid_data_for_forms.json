@@ -1,0 +1,32 @@
+[
+  {
+    "model": "users.customuser",
+    "fields": {
+      "username": "JohnLennon",
+      "first_name": "John",
+      "last_name": "Lennon",
+      "password1": "z1x2c3v4",
+      "password2": "z1x2c3v4"
+    }
+  },
+  {
+    "model": "users.customuser",
+    "fields": {
+      "username": "SteveJobs",
+      "first_name": "Steve",
+      "last_name": "Jobs",
+      "password1": "z1x2",
+      "password2": "z1x2"
+    }
+  },
+  {
+    "model": "users.customuser",
+    "fields": {
+      "username": "BradPitt",
+      "first_name": "Brad",
+      "last_name": "Pitt",
+      "password1": "z1x2c3v4b5",
+      "password2": "z1x2c3v4b5"
+    }
+  }
+]
