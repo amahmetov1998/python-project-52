@@ -18,7 +18,7 @@
             <a class="nav-link" href="{% url 'users' %}">{% trans 'Users' %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{% trans 'Statuses' %}</a>
+            <a class="nav-link" href="{% url 'statuses' %}">{% trans 'Statuses' %}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">{% trans 'Labels' %}</a>
@@ -37,7 +37,7 @@
             <a class="nav-link" href="{% url 'login' %}">{% trans 'Entrance' %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'register' %}">{% trans 'Registration' %}</a>
+            <a class="nav-link" href="{% url 'register_user' %}">{% trans 'Registration' %}</a>
           </li>
           {% endif %}
           {% load django_bootstrap5 %}

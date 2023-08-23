@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 10:45+0500\n"
+"POT-Creation-Date: 2023-08-23 09:09+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,22 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\statuses\utils.py:13 .\users\views.py:53 .\users\views.py:72
+msgid "You are not authorized! Please sign in."
+msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
+
+#: .\statuses\views.py:18
+msgid "Status created successfully"
+msgstr "Статус успешно создан"
+
+#: .\statuses\views.py:32
+msgid "Status changed successfully"
+msgstr "Статус успешно изменен"
+
+#: .\statuses\views.py:39
+msgid "Status deleted successfully"
+msgstr "Статус успешно удален"
+
 #: .\templates\base.html:13
 msgid "Task manager"
 msgstr "Менеджер задач"
@@ -51,30 +67,26 @@ msgstr "Вход"
 msgid "Registration"
 msgstr "Регистрация"
 
-#: .\users\views.py:21
+#: .\users\views.py:19
 msgid "User registered successfully"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: .\users\views.py:27
+#: .\users\views.py:25
 msgid "You are logged in"
 msgstr "Вы залогинены"
 
-#: .\users\views.py:45
+#: .\users\views.py:43
 msgid "User changed successfully"
 msgstr "Пользователь успешно изменен"
 
-#: .\users\views.py:52 .\users\views.py:71
+#: .\users\views.py:50 .\users\views.py:69
 msgid "You do not have rights to change another user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: .\users\views.py:55 .\users\views.py:74
-msgid "You are not authorized! Please sign in."
-msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
-
-#: .\users\views.py:63
+#: .\users\views.py:61
 msgid "User deleted successfully"
 msgstr "Пользователь успешно удален"
 
-#: .\users\views.py:82
+#: .\users\views.py:80
 msgid "You are logged out"
 msgstr "Вы разлогинены"

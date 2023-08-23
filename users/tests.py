@@ -19,16 +19,18 @@ class SetUpTestCase(TestCase):
 
 
 class UserCreateTestCase(SetUpTestCase):
-    def test_user_creation(self):
+    def test_create_user(self):
+
         user = self.user
 
         self.assertTrue(isinstance(user, User))
         self.assertEqual(user.first_name, 'John')
         self.assertEqual(str(user), 'john_lennon')
 
-    def test_user_registration_success(self):
+    def test_registrate_user(self):
+
         response = self.client.post(
-            reverse('register'),
+            reverse('register_user'),
             {'first_name': 'Katy', 'last_name': 'Perry',
              'username': 'katy_perry', 'password1': 'kBPfn673ls',
              'password2': 'kBPfn673ls'}
@@ -42,8 +44,9 @@ class UserCreateTestCase(SetUpTestCase):
 
 class UserUpdateTestCase(SetUpTestCase):
     def test_update_user(self):
+
         response = self.client.post(
-            reverse('update', kwargs={'pk': 1}),
+            reverse('update_user', kwargs={'pk': 1}),
             {'first_name': 'John', 'last_name': 'Lennon',
              'username': 'johny', 'password1': 'gtJej43j95',
              'password2': 'gtJej43j95'}
@@ -56,8 +59,9 @@ class UserUpdateTestCase(SetUpTestCase):
         self.assertEqual(str(messages[0]), 'Пользователь успешно изменен')
 
     def test_update_user_if_no_permission(self):
+
         response = self.client.post(
-            reverse('update', kwargs={'pk': 2}),
+            reverse('update_user', kwargs={'pk': 2}),
             {'first_name': 'Kate', 'last_name': 'Perry',
              'username': 'kate_perry', 'password1': 'kBPfn673ls',
              'password2': 'kBPfn673ls'}
@@ -70,8 +74,10 @@ class UserUpdateTestCase(SetUpTestCase):
         self.assertEqual(str(messages[0]), 'У вас нет прав для изменения другого пользователя.')
 
     def test_update_user_if_not_logged_in(self):
+
         self.client.logout()
-        response = self.client.get(reverse('update', kwargs={'pk': 1}))
+        response = self.client.get(reverse('update_user', kwargs={'pk': 1}))
+
         self.assertRedirects(response, reverse('login'))
         self.assertEqual(response.status_code, 302)
 
@@ -81,7 +87,8 @@ class UserUpdateTestCase(SetUpTestCase):
 
 class UserDeleteTestCase(SetUpTestCase):
     def test_delete_user(self):
-        response = self.client.post(reverse('delete', kwargs={'pk': 1}))
+
+        response = self.client.post(reverse('delete_user', kwargs={'pk': 1}))
 
         self.assertRedirects(response, reverse('users'))
         self.assertEqual(response.status_code, 302)
@@ -90,7 +97,8 @@ class UserDeleteTestCase(SetUpTestCase):
         self.assertEqual(str(messages[0]), 'Пользователь успешно удален')
 
     def test_delete_user_if_no_permission(self):
-        response = self.client.post(reverse('delete', kwargs={'pk': 2}))
+
+        response = self.client.post(reverse('delete_user', kwargs={'pk': 2}))
 
         self.assertRedirects(response, reverse('users'))
         self.assertEqual(response.status_code, 302)
@@ -99,8 +107,10 @@ class UserDeleteTestCase(SetUpTestCase):
         self.assertEqual(str(messages[0]), 'У вас нет прав для изменения другого пользователя.')
 
     def test_delete_user_if_not_logged_in(self):
+
         self.client.logout()
-        response = self.client.get(reverse('delete', kwargs={'pk': 1}))
+        response = self.client.get(reverse('delete_user', kwargs={'pk': 1}))
+
         self.assertRedirects(response, reverse('login'))
         self.assertEqual(response.status_code, 302)
 
