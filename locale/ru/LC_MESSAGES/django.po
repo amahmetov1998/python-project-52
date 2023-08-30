@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-23 09:09+0500\n"
+"POT-Creation-Date: 2023-08-29 21:05+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,21 +19,58 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
-#: .\statuses\utils.py:13 .\users\views.py:53 .\users\views.py:72
+#: .\labels\utils.py:13 .\statuses\utils.py:13 .\tasks\utils.py:13
+#: .\tasks\views.py:55 .\users\views.py:54 .\users\views.py:80
 msgid "You are not authorized! Please sign in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
-#: .\statuses\views.py:18
+#: .\labels\views.py:21
+msgid "Label created successfully"
+msgstr "Метка успешно создана"
+
+#: .\labels\views.py:35
+msgid "Label changed successfully"
+msgstr "Метка успешно изменена"
+
+#: .\labels\views.py:46
+msgid "Label deleted successfully"
+msgstr "Метка успешно удалена"
+
+#: .\labels\views.py:49
+msgid "The label cannot be deleted because it's used"
+msgstr "Невозможно удалить метку, потому что она используется"
+
+#: .\statuses\views.py:21
 msgid "Status created successfully"
 msgstr "Статус успешно создан"
 
-#: .\statuses\views.py:32
+#: .\statuses\views.py:35
 msgid "Status changed successfully"
 msgstr "Статус успешно изменен"
 
-#: .\statuses\views.py:39
+#: .\statuses\views.py:46
 msgid "Status deleted successfully"
 msgstr "Статус успешно удален"
+
+#: .\statuses\views.py:49
+msgid "The status cannot be deleted because it's used"
+msgstr "Невозможно удалить статус, потому что он используется"
+
+#: .\tasks\views.py:18
+msgid "Task created successfully"
+msgstr "Задача успешно создана"
+
+#: .\tasks\views.py:36
+msgid "Task changed successfully"
+msgstr "Задача успешно изменена"
+
+#: .\tasks\views.py:43
+msgid "Task deleted successfully"
+msgstr "Задача успешно удалена"
+
+#: .\tasks\views.py:52
+msgid "The author can delete a task only"
+msgstr "Задачу может удалить только ее автор"
 
 #: .\templates\base.html:13
 msgid "Task manager"
@@ -67,26 +104,30 @@ msgstr "Вход"
 msgid "Registration"
 msgstr "Регистрация"
 
-#: .\users\views.py:19
+#: .\users\views.py:20
 msgid "User registered successfully"
 msgstr "Пользователь успешно зарегистрирован"
 
-#: .\users\views.py:25
+#: .\users\views.py:26
 msgid "You are logged in"
 msgstr "Вы залогинены"
 
-#: .\users\views.py:43
+#: .\users\views.py:44
 msgid "User changed successfully"
 msgstr "Пользователь успешно изменен"
 
-#: .\users\views.py:50 .\users\views.py:69
+#: .\users\views.py:51 .\users\views.py:77
 msgid "You do not have rights to change another user."
 msgstr "У вас нет прав для изменения другого пользователя."
 
-#: .\users\views.py:61
+#: .\users\views.py:66
 msgid "User deleted successfully"
 msgstr "Пользователь успешно удален"
 
-#: .\users\views.py:80
+#: .\users\views.py:69
+msgid "The user cannot be deleted because it's used"
+msgstr "Невозможно удалить пользователя, потому что он используется"
+
+#: .\users\views.py:88
 msgid "You are logged out"
 msgstr "Вы разлогинены"

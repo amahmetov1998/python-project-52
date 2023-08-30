@@ -1,4 +1,4 @@
-from .models import Status
+from .models import Label
 from django.contrib.messages import get_messages
 from django.test import TestCase
 from django.urls import reverse
@@ -18,37 +18,37 @@ class SetUpTestCase(TestCase):
             username='john_lennon', password='gtJej43j95',
         )
 
-        self.status = Status.objects.create(name='Status')
-        self.status.save()
+        self.label = Label.objects.create(name='Label')
+        self.label.save()
 
 
-class StatusCreateTestCase(SetUpTestCase):
+class LabelCreateTestCase(SetUpTestCase):
 
-    def test_create_status(self):
+    def test_create_label(self):
 
-        response = self.client.post(reverse('create_status'), {'name': 'New'})
+        response = self.client.post(reverse('create_label'), {'name': 'Text'})
 
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse('statuses'))
+        self.assertRedirects(response, reverse('labels'))
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Статус успешно создан')
+        self.assertEqual(str(messages[0]), 'Метка успешно создана')
 
-    def test_create_status_if_not_logged_in(self):
+    def test_create_label_if_not_logged_in(self):
 
         self.client.logout()
 
-        response = self.client.get(reverse('create_status'))
+        response = self.client.get(reverse('create_label'))
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('login'))
 
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
 
-    def test_statuses_access_if_not_logged_in(self):
+    def test_labels_access_if_not_logged_in(self):
 
         self.client.logout()
-        response = self.client.get(reverse('statuses'))
+        response = self.client.get(reverse('labels'))
 
         self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('login'))
@@ -57,21 +57,21 @@ class StatusCreateTestCase(SetUpTestCase):
         self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
 
 
-class StatusUpdateTestCase(SetUpTestCase):
-    def test_update_status(self):
+class LabelUpdateTestCase(SetUpTestCase):
+    def test_update_label(self):
 
-        response = self.client.post(reverse('update_status', kwargs={'pk': 1}), {'name': 'In work'})
+        response = self.client.post(reverse('update_label', kwargs={'pk': 1}), {'name': 'Labels'})
 
-        self.assertRedirects(response, reverse('statuses'))
+        self.assertRedirects(response, reverse('labels'))
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Статус успешно изменен')
+        self.assertEqual(str(messages[0]), 'Метка успешно изменена')
 
-    def test_update_status_if_not_logged_in(self):
+    def test_update_label_if_not_logged_in(self):
 
         self.client.logout()
-        response = self.client.get(reverse('update_status', kwargs={'pk': 1}))
+        response = self.client.get(reverse('update_label', kwargs={'pk': 1}))
 
         self.assertRedirects(response, reverse('login'))
         self.assertEqual(response.status_code, 302)
@@ -80,21 +80,21 @@ class StatusUpdateTestCase(SetUpTestCase):
         self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
 
 
-class StatusDeleteTestCase(SetUpTestCase):
-    def test_delete_status(self):
+class LabelDeleteTestCase(SetUpTestCase):
+    def test_delete_label(self):
 
-        response = self.client.post(reverse('delete_status', kwargs={'pk': 1}))
+        response = self.client.post(reverse('delete_label', kwargs={'pk': 1}))
 
-        self.assertRedirects(response, reverse('statuses'))
+        self.assertRedirects(response, reverse('labels'))
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Статус успешно удален')
+        self.assertEqual(str(messages[0]), 'Метка успешно удалена')
 
-    def test_delete_status_if_not_logged_in(self):
+    def test_delete_label_if_not_logged_in(self):
 
         self.client.logout()
-        response = self.client.get(reverse('delete_status', kwargs={'pk': 1}))
+        response = self.client.get(reverse('delete_label', kwargs={'pk': 1}))
 
         self.assertRedirects(response, reverse('login'))
         self.assertEqual(response.status_code, 302)

@@ -5,20 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac16b925-4529-4ecd-b723-6e5a9cb488fd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/statuses/templates/statuses/create_status.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statuses/templates/statuses/delete_status.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statuses/templates/statuses/statuses.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statuses/templates/statuses/update_status.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/templates/labels/create_label.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/templates/labels/delete_label.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/templates/labels/labels.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels/templates/labels/update_label.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/templates/tasks/create_task.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/templates/tasks/delete_task.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/templates/tasks/tasks.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tasks/templates/tasks/update_task.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.mo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statuses/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/statuses/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statuses/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statuses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/statuses/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statuses/templates/statuses/update_status.html" beforeDir="false" afterPath="$PROJECT_DIR$/statuses/templates/statuses/update_status.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statuses/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/statuses/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statuses/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/statuses/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/task_manager/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/fixtures/invalid_data_for_forms.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/fixtures/users.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/fixtures/valid_data_for_forms.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,17 +72,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/PycharmProjects/python-project-52/statuses/templates/statuses&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/User/PycharmProjects/python-project-52/labels",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\PycharmProjects\python-project-52\labels" />
+      <recent name="C:\Users\User\PycharmProjects\python-project-52\tasks" />
       <recent name="C:\Users\User\PycharmProjects\python-project-52\statuses\templates\statuses" />
       <recent name="C:\Users\User\PycharmProjects\python-project-52\users\fixtures" />
       <recent name="C:\Users\User\PycharmProjects\python-project-52\task_manager\templates" />

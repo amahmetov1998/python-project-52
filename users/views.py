@@ -1,3 +1,4 @@
+from django.db.models import ProtectedError
 from django.shortcuts import redirect
 from .forms import *
 from django.urls import reverse_lazy
@@ -54,12 +55,19 @@ class UpdateUser(SuccessMessageMixin, UserPassesTestMixin, UpdateView):
             return redirect(reverse_lazy('login'))
 
 
-class DeleteUser(SuccessMessageMixin, UserPassesTestMixin, DeleteView):
+class DeleteUser(UserPassesTestMixin, DeleteView):
     model = User
     context_object_name = 'user'
     template_name = 'users/delete_user.html'
-    success_message = _('User deleted successfully')
-    success_url = reverse_lazy('users')
+
+    def form_valid(self, form):
+        try:
+            self.object.delete()
+            messages.success(self.request, _("User deleted successfully"))
+            return redirect(reverse_lazy('users'))
+        except ProtectedError:
+            messages.error(self.request, _("The user cannot be deleted because it's used"))
+            return redirect(reverse_lazy('users'))
 
     def test_func(self):
         return self.request.user.id == self.kwargs['pk']

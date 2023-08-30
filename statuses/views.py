@@ -1,3 +1,6 @@
+from django.contrib import messages
+from django.db.models import ProtectedError
+from django.shortcuts import redirect
 from django.utils.translation import gettext as _
 from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
@@ -32,9 +35,16 @@ class UpdateStatus(NoPermissionMixin, SuccessMessageMixin, UpdateView):
     success_message = _('Status changed successfully')
 
 
-class DeleteStatus(NoPermissionMixin, SuccessMessageMixin, DeleteView):
+class DeleteStatus(NoPermissionMixin, DeleteView):
     model = Status
     context_object_name = 'status'
     template_name = 'statuses/delete_status.html'
-    success_message = _('Status deleted successfully')
-    success_url = reverse_lazy('statuses')
+
+    def form_valid(self, form):
+        try:
+            self.object.delete()
+            messages.success(self.request, _("Status deleted successfully"))
+            return redirect(reverse_lazy('statuses'))
+        except ProtectedError:
+            messages.error(self.request, _("The status cannot be deleted because it's used"))
+            return redirect(reverse_lazy('statuses'))

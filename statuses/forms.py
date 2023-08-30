@@ -4,7 +4,6 @@ from .models import Status
 
 
 class StatusForm(ModelForm):
-    name = forms.CharField(label='Имя')
 
     class Meta:
         model = Status

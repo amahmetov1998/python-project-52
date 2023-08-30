@@ -60,12 +60,7 @@ class UserUpdateTestCase(SetUpTestCase):
 
     def test_update_user_if_no_permission(self):
 
-        response = self.client.post(
-            reverse('update_user', kwargs={'pk': 2}),
-            {'first_name': 'Kate', 'last_name': 'Perry',
-             'username': 'kate_perry', 'password1': 'kBPfn673ls',
-             'password2': 'kBPfn673ls'}
-        )
+        response = self.client.get(reverse('update_user', kwargs={'pk': 2}))
 
         self.assertRedirects(response, reverse('users'))
         self.assertEqual(response.status_code, 302)
