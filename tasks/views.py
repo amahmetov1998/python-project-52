@@ -3,9 +3,11 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.utils.translation import gettext as _
+from django_filters.views import FilterView
 
+from .filters import TaskFilter
 from .forms import TaskForm
 from .models import Task
 from .utils import NoPermissionMixin
@@ -22,10 +24,11 @@ class CreateTask(NoPermissionMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class ShowTasks(NoPermissionMixin, ListView):
+class ShowTasks(NoPermissionMixin, FilterView):
     template_name = 'tasks/tasks.html'
     context_object_name = 'tasks'
     model = Task
+    filterset_class = TaskFilter
 
 
 class UpdateTask(NoPermissionMixin, SuccessMessageMixin, UpdateView):
