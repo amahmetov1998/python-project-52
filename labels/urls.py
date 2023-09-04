@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import *
+from .views import ShowLabels, UpdateLabel, DeleteLabel, CreateLabel
 
 urlpatterns = [
     path('', ShowLabels.as_view(), name='labels'),

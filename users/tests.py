@@ -39,7 +39,8 @@ class UserCreateTestCase(SetUpTestCase):
         self.assertRedirects(response, reverse('login'))
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Пользователь успешно зарегистрирован')
+        self.assertEqual(str(messages[0]),
+                         'Пользователь успешно зарегистрирован')
 
 
 class UserUpdateTestCase(SetUpTestCase):
@@ -66,7 +67,8 @@ class UserUpdateTestCase(SetUpTestCase):
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'У вас нет прав для изменения другого пользователя.')
+        self.assertEqual(str(messages[0]),
+                         'У вас нет прав для изменения другого пользователя.')
 
     def test_update_user_if_not_logged_in(self):
 
@@ -77,7 +79,8 @@ class UserUpdateTestCase(SetUpTestCase):
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.')
 
 
 class UserDeleteTestCase(SetUpTestCase):
@@ -99,7 +102,8 @@ class UserDeleteTestCase(SetUpTestCase):
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'У вас нет прав для изменения другого пользователя.')
+        self.assertEqual(str(messages[0]),
+                         'У вас нет прав для изменения другого пользователя.')
 
     def test_delete_user_if_not_logged_in(self):
 
@@ -110,4 +114,5 @@ class UserDeleteTestCase(SetUpTestCase):
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.')

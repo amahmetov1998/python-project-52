@@ -1,7 +1,7 @@
 from django.urls import path
 
 
-from .views import *
+from .views import ShowTasks, UpdateTask, DeleteTask, ViewTask, CreateTask
 
 
 urlpatterns = [

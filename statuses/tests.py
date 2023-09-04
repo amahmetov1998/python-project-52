@@ -43,7 +43,9 @@ class StatusCreateTestCase(SetUpTestCase):
         self.assertRedirects(response, reverse('login'))
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.'
+                         )
 
     def test_statuses_access_if_not_logged_in(self):
 
@@ -54,13 +56,16 @@ class StatusCreateTestCase(SetUpTestCase):
         self.assertRedirects(response, reverse('login'))
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.'
+                         )
 
 
 class StatusUpdateTestCase(SetUpTestCase):
     def test_update_status(self):
 
-        response = self.client.post(reverse('update_status', kwargs={'pk': 1}), {'name': 'In work'})
+        response = self.client.post(reverse('update_status', kwargs={'pk': 1}),
+                                    {'name': 'In work'})
 
         self.assertRedirects(response, reverse('statuses'))
         self.assertEqual(response.status_code, 302)
@@ -77,7 +82,8 @@ class StatusUpdateTestCase(SetUpTestCase):
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.')
 
 
 class StatusDeleteTestCase(SetUpTestCase):
@@ -100,4 +106,5 @@ class StatusDeleteTestCase(SetUpTestCase):
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.')

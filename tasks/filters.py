@@ -8,8 +8,13 @@ from labels.models import Label
 
 
 class TaskFilter(django_filters.FilterSet):
-    label = ChoiceFilter(label=_('Label'), choices=Label.objects.values_list('id', 'name'))
-    my_tasks = BooleanFilter(label=_('Only my tasks'), widget=forms.CheckboxInput, method='filter_tasks')
+    label = ChoiceFilter(label=_('Label'),
+                         choices=Label.objects.values_list('id', 'name')
+                         )
+    my_tasks = BooleanFilter(label=_('Only my tasks'),
+                             widget=forms.CheckboxInput,
+                             method='filter_tasks'
+                             )
 
     class Meta:
         model = Task

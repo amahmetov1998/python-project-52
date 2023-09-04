@@ -9,7 +9,8 @@ class RegisterForm(UserCreationForm):
     last_name = forms.CharField(label=_('Surname'))
     username = forms.CharField(
         label=_('Username'),
-        help_text=_('Required field. No more than 150 characters. Letters, numbers and symbols @/./+/-/_ only.'))
+        help_text=_('Required field. No more than 150 characters.'
+                    'Letters, numbers and symbols @/./+/-/_ only.'))
     password1 = forms.CharField(
         label=_('Password'),
         help_text=_('Your password must contain at least 3 characters.'),
@@ -21,7 +22,13 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'username', 'password1', 'password2')
+        fields = (
+            'first_name',
+            'last_name',
+            'username',
+            'password1',
+            'password2'
+        )
 
 
 class LoginUserForm(AuthenticationForm):

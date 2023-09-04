@@ -47,15 +47,18 @@ class DeleteTask(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     success_url = reverse_lazy('tasks')
 
     def test_func(self):
-        created_by_id = Task.objects.filter(id=self.kwargs['pk'])[0].created_by_id
+        created_by_id = Task.objects.filter(
+            id=self.kwargs['pk'])[0].created_by_id
         return self.request.user.id == created_by_id
 
     def handle_no_permission(self):
         if self.request.user.is_authenticated:
-            messages.error(self.request, _('The author can delete a task only'))
+            messages.error(self.request,
+                           _('The author can delete a task only'))
             return redirect(reverse_lazy('tasks'))
         else:
-            messages.error(self.request, _('You are not authorized! Please sign in.'))
+            messages.error(self.request,
+                           _('You are not authorized! Please sign in.'))
             return redirect(reverse_lazy('login'))
 
 
@@ -63,4 +66,3 @@ class ViewTask(NoPermissionMixin, DetailView):
     model = Task
     template_name = 'tasks/view_task.html'
     context_object_name = 'task'
-

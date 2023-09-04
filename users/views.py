@@ -1,6 +1,6 @@
 from django.db.models import ProtectedError
 from django.shortcuts import redirect
-from .forms import *
+from .forms import UpdateForm, LoginUserForm, RegisterForm
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib.auth.views import LoginView, LogoutView
@@ -11,6 +11,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 
 class RegisterUser(SuccessMessageMixin, CreateView):
@@ -48,10 +49,12 @@ class UpdateUser(SuccessMessageMixin, UserPassesTestMixin, UpdateView):
 
     def handle_no_permission(self):
         if self.request.user.is_authenticated:
-            messages.error(self.request, _('You do not have rights to change another user.'))
+            messages.error(self.request,
+                           _('You do not have rights to change another user.'))
             return redirect(reverse_lazy('users'))
         else:
-            messages.error(self.request, _('You are not authorized! Please sign in.'))
+            messages.error(self.request,
+                           _('You are not authorized! Please sign in.'))
             return redirect(reverse_lazy('login'))
 
 
@@ -66,7 +69,8 @@ class DeleteUser(UserPassesTestMixin, DeleteView):
             messages.success(self.request, _("User deleted successfully"))
             return redirect(reverse_lazy('users'))
         except ProtectedError:
-            messages.error(self.request, _("The user cannot be deleted because it's used"))
+            messages.error(self.request,
+                           _("The user cannot be deleted because it's used"))
             return redirect(reverse_lazy('users'))
 
     def test_func(self):
@@ -74,10 +78,12 @@ class DeleteUser(UserPassesTestMixin, DeleteView):
 
     def handle_no_permission(self):
         if self.request.user.is_authenticated:
-            messages.error(self.request, _('You do not have rights to change another user.'))
+            messages.error(self.request,
+                           _('You do not have rights to change another user.'))
             return redirect(reverse_lazy('users'))
         else:
-            messages.error(self.request, _('You are not authorized! Please sign in.'))
+            messages.error(self.request,
+                           _('You are not authorized! Please sign in.'))
             return redirect(reverse_lazy('login'))
 
 

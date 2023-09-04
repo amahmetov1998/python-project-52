@@ -10,5 +10,6 @@ class NoPermissionMixin(LoginRequiredMixin, View):
 
     def handle_no_permission(self):
         if not self.request.user.is_authenticated:
-            messages.error(self.request, _('You are not authorized! Please sign in.'))
+            messages.error(self.request,
+                           _('You are not authorized! Please sign in.'))
             return redirect(reverse_lazy('login'))

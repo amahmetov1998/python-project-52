@@ -43,7 +43,8 @@ class LabelCreateTestCase(SetUpTestCase):
         self.assertRedirects(response, reverse('login'))
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.')
 
     def test_labels_access_if_not_logged_in(self):
 
@@ -54,13 +55,15 @@ class LabelCreateTestCase(SetUpTestCase):
         self.assertRedirects(response, reverse('login'))
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.')
 
 
 class LabelUpdateTestCase(SetUpTestCase):
     def test_update_label(self):
 
-        response = self.client.post(reverse('update_label', kwargs={'pk': 1}), {'name': 'Labels'})
+        response = self.client.post(reverse('update_label', kwargs={'pk': 1}),
+                                    {'name': 'Labels'})
 
         self.assertRedirects(response, reverse('labels'))
         self.assertEqual(response.status_code, 302)
@@ -77,7 +80,8 @@ class LabelUpdateTestCase(SetUpTestCase):
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.')
 
 
 class LabelDeleteTestCase(SetUpTestCase):
@@ -100,4 +104,5 @@ class LabelDeleteTestCase(SetUpTestCase):
         self.assertEqual(response.status_code, 302)
 
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(str(messages[0]), 'Вы не авторизованы! Пожалуйста, выполните вход.')
+        self.assertEqual(str(messages[0]),
+                         'Вы не авторизованы! Пожалуйста, выполните вход.')

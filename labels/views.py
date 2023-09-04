@@ -43,8 +43,10 @@ class DeleteLabel(NoPermissionMixin, DeleteView):
     def form_valid(self, form):
         try:
             self.object.delete()
-            messages.success(self.request, _("Label deleted successfully"))
+            messages.success(self.request,
+                             _("Label deleted successfully"))
             return redirect(reverse_lazy('labels'))
         except ProtectedError:
-            messages.error(self.request, _("The label cannot be deleted because it's used"))
+            messages.error(self.request,
+                           _("The label cannot be deleted because it's used"))
             return redirect(reverse_lazy('labels'))

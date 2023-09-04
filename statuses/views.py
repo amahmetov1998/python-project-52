@@ -43,8 +43,12 @@ class DeleteStatus(NoPermissionMixin, DeleteView):
     def form_valid(self, form):
         try:
             self.object.delete()
-            messages.success(self.request, _("Status deleted successfully"))
+            messages.success(self.request,
+                             _("Status deleted successfully")
+                             )
             return redirect(reverse_lazy('statuses'))
         except ProtectedError:
-            messages.error(self.request, _("The status cannot be deleted because it's used"))
+            messages.error(self.request,
+                           _("The status cannot be deleted because it's used")
+                           )
             return redirect(reverse_lazy('statuses'))
