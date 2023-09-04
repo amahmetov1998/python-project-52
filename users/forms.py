@@ -27,8 +27,7 @@ class RegisterForm(UserCreationForm):
             'last_name',
             'username',
             'password1',
-            'password2'
-        )
+            'password2')
 
 
 class LoginUserForm(AuthenticationForm):
