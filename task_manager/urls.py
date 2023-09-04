@@ -29,5 +29,4 @@ urlpatterns = [
     path('statuses/', include('statuses.urls')),
     path('tasks/', include('tasks.urls')),
     path('labels/', include('labels.urls')),
-    path('set/', index),
 ]
