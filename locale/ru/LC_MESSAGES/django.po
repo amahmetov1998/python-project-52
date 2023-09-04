@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 21:05+0500\n"
+"POT-Creation-Date: 2023-09-04 12:47+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,8 +19,79 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\labels\models.py:6 .\labels\templates\labels\labels.html:11
+#: .\statuses\models.py:6 .\statuses\templates\statuses\statuses.html:11
+#: .\tasks\models.py:9 .\tasks\templates\tasks\tasks.html:19 .\users\forms.py:8
+msgid "Name"
+msgstr "Имя"
+
+#: .\labels\templates\labels\create_label.html:6
+#: .\labels\templates\labels\labels.html:7
+#: .\statuses\templates\statuses\create_status.html:6
+msgid "Create label"
+msgstr "Создать метку"
+
+#: .\labels\templates\labels\create_label.html:10
+#: .\statuses\templates\statuses\create_status.html:10
+#: .\tasks\templates\tasks\create_task.html:10
+msgid "Create"
+msgstr "Создать"
+
+#: .\labels\templates\labels\delete_label.html:6
+msgid "label removal"
+msgstr "Удаление метки"
+
+#: .\labels\templates\labels\delete_label.html:7
+#: .\statuses\templates\statuses\delete_status.html:7
+#: .\tasks\templates\tasks\delete_task.html:7
+#: .\users\templates\users\delete_user.html:7
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: .\labels\templates\labels\delete_label.html:10
+#: .\statuses\templates\statuses\delete_status.html:10
+#: .\tasks\templates\tasks\delete_task.html:10
+#: .\users\templates\users\delete_user.html:10
+msgid "Yes, delete"
+msgstr "Да, удалить"
+
+#: .\labels\templates\labels\labels.html:6 .\templates\base.html:24
+msgid "Labels"
+msgstr "Метки"
+
+#: .\labels\templates\labels\labels.html:12
+#: .\statuses\templates\statuses\statuses.html:12
+#: .\tasks\templates\tasks\tasks.html:23
+#: .\tasks\templates\tasks\view_task.html:28
+#: .\users\templates\users\users.html:12
+msgid "Date of creation"
+msgstr "Дата создания"
+
+#: .\labels\templates\labels\labels.html:21
+#: .\statuses\templates\statuses\statuses.html:21
+#: .\tasks\templates\tasks\tasks.html:35
+#: .\tasks\templates\tasks\view_task.html:45
+#: .\users\templates\users\users.html:22
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\labels\templates\labels\update_label.html:6
+msgid "Label change"
+msgstr "Изменение метки"
+
+#: .\labels\templates\labels\update_label.html:10
+#: .\statuses\templates\statuses\statuses.html:21
+#: .\statuses\templates\statuses\update_status.html:10
+#: .\tasks\templates\tasks\tasks.html:35
+#: .\tasks\templates\tasks\update_task.html:10
+#: .\tasks\templates\tasks\view_task.html:43
+#: .\users\templates\users\update_user.html:10
+#: .\users\templates\users\users.html:22
+msgid "Change"
+msgstr "Изменить"
+
 #: .\labels\utils.py:13 .\statuses\utils.py:13 .\tasks\utils.py:13
-#: .\tasks\views.py:55 .\users\views.py:54 .\users\views.py:80
+#: .\tasks\views.py:58 .\users\views.py:54 .\users\views.py:80
 msgid "You are not authorized! Please sign in."
 msgstr "Вы не авторизованы! Пожалуйста, выполните вход."
 
@@ -40,6 +111,22 @@ msgstr "Метка успешно удалена"
 msgid "The label cannot be deleted because it's used"
 msgstr "Невозможно удалить метку, потому что она используется"
 
+#: .\statuses\templates\statuses\delete_status.html:6
+msgid "Status removal"
+msgstr "Удаление статуса"
+
+#: .\statuses\templates\statuses\statuses.html:6 .\templates\base.html:21
+msgid "Statuses"
+msgstr "Статусы"
+
+#: .\statuses\templates\statuses\statuses.html:7
+msgid "Create status"
+msgstr "Создать статус"
+
+#: .\statuses\templates\statuses\update_status.html:6
+msgid "Status change"
+msgstr "Изменение статуса"
+
 #: .\statuses\views.py:21
 msgid "Status created successfully"
 msgstr "Статус успешно создан"
@@ -56,53 +143,162 @@ msgstr "Статус успешно удален"
 msgid "The status cannot be deleted because it's used"
 msgstr "Невозможно удалить статус, потому что он используется"
 
-#: .\tasks\views.py:18
+#: .\tasks\filters.py:11 .\tasks\models.py:17
+msgid "Label"
+msgstr "Метка"
+
+#: .\tasks\filters.py:12
+msgid "Only my tasks"
+msgstr "Только свои задачи"
+
+#: .\tasks\models.py:10
+msgid "Description"
+msgstr "Описание"
+
+#: .\tasks\models.py:12 .\tasks\templates\tasks\tasks.html:20
+#: .\tasks\templates\tasks\view_task.html:24
+msgid "Status"
+msgstr "Статус"
+
+#: .\tasks\models.py:15 .\tasks\templates\tasks\tasks.html:22
+#: .\tasks\templates\tasks\view_task.html:20
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: .\tasks\templates\tasks\create_task.html:6
+#: .\tasks\templates\tasks\tasks.html:7
+msgid "Create task"
+msgstr "Создать задачу"
+
+#: .\tasks\templates\tasks\delete_task.html:6
+msgid "Task removal"
+msgstr "Удаление задачи"
+
+#: .\tasks\templates\tasks\tasks.html:6 .\templates\base.html:27
+msgid "Tasks"
+msgstr "Задачи"
+
+#: .\tasks\templates\tasks\tasks.html:12
+msgid "Show"
+msgstr "Показать"
+
+#: .\tasks\templates\tasks\tasks.html:21
+#: .\tasks\templates\tasks\view_task.html:16
+msgid "Author"
+msgstr "Автор"
+
+#: .\tasks\templates\tasks\update_task.html:6
+msgid "Task change"
+msgstr "Изменение задачи"
+
+#: .\tasks\templates\tasks\view_task.html:6
+msgid "Task view"
+msgstr "Просмотр задачи"
+
+#: .\tasks\views.py:20
 msgid "Task created successfully"
 msgstr "Задача успешно создана"
 
-#: .\tasks\views.py:36
+#: .\tasks\views.py:39
 msgid "Task changed successfully"
 msgstr "Задача успешно изменена"
 
-#: .\tasks\views.py:43
+#: .\tasks\views.py:46
 msgid "Task deleted successfully"
 msgstr "Задача успешно удалена"
 
-#: .\tasks\views.py:52
+#: .\tasks\views.py:55
 msgid "The author can delete a task only"
 msgstr "Задачу может удалить только ее автор"
+
+#: .\templates\base.html:7
+msgid "Task manager Hexlet"
+msgstr "Менеджер задач Hexlet"
 
 #: .\templates\base.html:13
 msgid "Task manager"
 msgstr "Менеджер задач"
 
 #: .\templates\base.html:18 .\templates\base.html:34
+#: .\users\templates\users\users.html:6
 msgid "Users"
 msgstr "Пользователи"
-
-#: .\templates\base.html:21
-msgid "Statuses"
-msgstr "Статусы"
-
-#: .\templates\base.html:24
-msgid "Labels"
-msgstr "Метки"
-
-#: .\templates\base.html:27
-msgid "Tasks"
-msgstr "Задачи"
 
 #: .\templates\base.html:30
 msgid "Exit"
 msgstr "Выход"
 
-#: .\templates\base.html:37
-msgid "Entrance"
+#: .\templates\base.html:37 .\users\templates\users\login_user.html:6
+msgid "Login"
 msgstr "Вход"
 
-#: .\templates\base.html:40
+#: .\templates\base.html:40 .\users\templates\users\register_user.html:6
 msgid "Registration"
 msgstr "Регистрация"
+
+#: .\templates\main.html:9
+msgid "Hello from Hexlet!"
+msgstr "Привет от Хекслета!"
+
+#: .\templates\main.html:10
+msgid "Practical programming courses"
+msgstr "Практические курсы по программированию"
+
+#: .\templates\main.html:12
+msgid "Learn more"
+msgstr "Узнать больше"
+
+#: .\users\forms.py:9
+msgid "Surname"
+msgstr "Фамилия"
+
+#: .\users\forms.py:11 .\users\forms.py:28
+#: .\users\templates\users\users.html:10
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: .\users\forms.py:12
+msgid ""
+"Required field. No more than 150 characters. Letters, numbers and symbols "
+"@/./+/-/_ only."
+msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./"
+"+/-/_."
+
+#: .\users\forms.py:14 .\users\forms.py:29
+msgid "Password"
+msgstr "Пароль"
+
+#: .\users\forms.py:15
+msgid "Your password must contain at least 3 characters."
+msgstr "Ваш пароль должен содержать как минимум 3 символа."
+
+#: .\users\forms.py:18
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
+#: .\users\forms.py:19
+msgid "To confirm, please enter your password again."
+msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
+
+#: .\users\templates\users\delete_user.html:6
+msgid "User removal"
+msgstr "Удаление пользователя"
+
+#: .\users\templates\users\login_user.html:10
+msgid "To login"
+msgstr "Войти"
+
+#: .\users\templates\users\register_user.html:10
+msgid "Registrate"
+msgstr "Зарегистрировать"
+
+#: .\users\templates\users\update_user.html:6
+msgid "User change"
+msgstr "Изменение пользователя"
+
+#: .\users\templates\users\users.html:11
+msgid "Full name"
+msgstr "Полное имя"
 
 #: .\users\views.py:20
 msgid "User registered successfully"

@@ -4,7 +4,7 @@
 <html lang="ru-ru">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Менеджер задач Hexlet</title>
+    <title>{% trans 'Task manager Hexlet' %}</title>
   </head>
 
   <body class="d-flex flex-column min-vh-100">
@@ -34,7 +34,7 @@
             <a class="nav-link" href="{% url 'users' %}">{% trans 'Users' %}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">{% trans 'Entrance' %}</a>
+            <a class="nav-link" href="{% url 'login' %}">{% trans 'Login' %}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'register_user' %}">{% trans 'Registration' %}</a>
@@ -51,6 +51,12 @@
       {% block content %}
       {% endblock %}
     </div>
+  
+  <footer>
+      <div class="container my-5 pt-4 border-top">
+        <a target="_blank" href="https://ru.hexlet.io">Hexlet</a>
+      </div>
+    </footer>
   </body>
 </html>
 
