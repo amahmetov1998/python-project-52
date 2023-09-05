@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ac16b925-4529-4ecd-b723-6e5a9cb488fd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.mo" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task_manager/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/task_manager/users/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
