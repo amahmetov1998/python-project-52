@@ -9,8 +9,7 @@ class RegisterForm(UserCreationForm):
     last_name = forms.CharField(label=_('Surname'))
     username = forms.CharField(
         label=_('Username'),
-        help_text=_('Required field. No more than 150 characters.'
-                    'Letters, numbers and symbols @/./+/-/_ only.'))
+        help_text=_('Required field. No more than 150 characters. Letters, numbers and symbols @/./+/-/_ only.')) # noqa E501
     password1 = forms.CharField(
         label=_('Password'),
         help_text=_('Your password must contain at least 3 characters.'),
