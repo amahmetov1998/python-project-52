@@ -8,10 +8,29 @@ jobs:
     - name: install poetry
       run: pip install poetry
     - name: install dependencies
-      run: poetry install
+      run: make install
     - name: run tests
       env:
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: poetry run python manage.py test
     - name: run linter
       run: poetry run flake8 .
+  coverage:
+    needs: linter_and_tests
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: install poetry
+      run: pip install poetry
+    - name: install dependencies
+      run: make install
+    - name: create reporter
+    - name: Test & publish code coverage
+      uses: paambaati/codeclimate-action@v3.2.0
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      with:
+        coverageCommand: make test-coverage
+        debug: true
