@@ -1,4 +1,4 @@
-name: run tests and linter
+name: my-check
 on: push
 jobs:
   linter_and_tests:
@@ -10,6 +10,8 @@ jobs:
     - name: install dependencies
       run: poetry install
     - name: run tests
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: poetry run python manage.py test
     - name: run linter
       run: poetry run flake8 .
