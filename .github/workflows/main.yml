@@ -1,0 +1,15 @@
+name: run tests and linter
+on: push
+jobs:
+  linter_and_tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: install poetry
+      run: pip install poetry
+    - name: install dependencies
+      run: poetry install
+    - name: run tests
+      run: poetry run python manage.py test
+    - name: run linter
+      run: poetry run flake8 .
