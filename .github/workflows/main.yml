@@ -1,4 +1,4 @@
-name: my-check
+name: project-check
 on: push
 jobs:
   linter_and_tests:
