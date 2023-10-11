@@ -18,7 +18,7 @@
     <tr><td>{{ label.id }}</td>
         <td>{{ label.name }}</td>
         <td>{{ label.created_at }}</td>
-        <td><a href="{% url 'update_label' label.id %}">{% trans Change %}</a><br><a href="{% url 'delete_label' label.id %}">{% trans 'Delete' %}</a></td>
+        <td><a href="{% url 'update_label' label.id %}">{% trans 'Change' %}</a><br><a href="{% url 'delete_label' label.id %}">{% trans 'Delete' %}</a></td>
     </tr>
   {% endfor %}
     </tbody>
