@@ -30,8 +30,7 @@ class Task(models.Model):
                                    through='RelatedModel',
                                    through_fields=('task', 'label'),
                                    verbose_name=_('Labels'),
-                                   blank=True
-                                   )
+                                   blank=True)
 
 
 class RelatedModel(models.Model):
