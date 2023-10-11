@@ -11,7 +11,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-from django.contrib.auth.models import User
+from .models import User
 
 
 class RegisterUser(SuccessMessageMixin, CreateView):
