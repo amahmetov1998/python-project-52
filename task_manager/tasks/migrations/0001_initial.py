@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                     serialize=False,
                     verbose_name='ID')
                  ),
-                ('name',models.CharField(
+                ('name', models.CharField(
                     max_length=150,
                     unique=True,
                     verbose_name='Имя')
