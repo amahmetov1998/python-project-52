@@ -246,7 +246,7 @@ class TasksFilterTest(SetUpTestCase):
         self.assertEqual(tasks.count(), 3)
 
     def test_filter_tasks_by_label(self):
-        response = self.client.get(reverse('tasks'), {'labels': 1})
+        response = self.client.get(reverse('tasks'), {'label': 1})
         tasks = response.context['tasks']
         self.assertEqual(tasks.count(), 1)
 
@@ -257,11 +257,11 @@ class TasksFilterTest(SetUpTestCase):
 
     def test_filter_tasks_by_fields(self):
         response = self.client.get(reverse('tasks'),
-                                   {'status': 1, 'executor': 1, 'labels': 1})
+                                   {'status': 1, 'executor': 1, 'label': 1})
         tasks = response.context['tasks']
         self.assertEqual(tasks.count(), 1)
 
         response = self.client.get(reverse('tasks'),
-                                   {'status': 1, 'executor': 2, 'labels': 2})
+                                   {'status': 1, 'executor': 2, 'label': 2})
         tasks = response.context['tasks']
         self.assertEqual(tasks.count(), 2)
