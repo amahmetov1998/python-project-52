@@ -26,5 +26,12 @@ class Task(models.Model):
                                  null=True,
                                  verbose_name=_('Executor')
                                  )
-    label = models.ManyToManyField(Label, verbose_name=_('Labels'),
-                                   blank=True)
+    labels = models.ManyToManyField(Label, through='RelatedModel',
+                                    through_fields=('task', 'label'),
+                                    verbose_name=_('Labels'),
+                                    blank=True)
+
+
+class RelatedModel(models.Model):
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    label = models.ForeignKey(Label, on_delete=models.PROTECT)
