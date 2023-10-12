@@ -10,7 +10,7 @@ from task_manager.labels.models import Label
 class TaskFilter(django_filters.FilterSet):
     labels = ChoiceFilter(label=_('Label'),
                          choices=Label.objects.values_list('id', 'name')
-                         )
+                          )
     my_tasks = BooleanFilter(label=_('Only my tasks'),
                              widget=forms.CheckboxInput,
                              method='filter_tasks'
