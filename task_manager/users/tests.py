@@ -25,7 +25,7 @@ class UserCreateTestCase(SetUpTestCase):
 
         self.assertTrue(isinstance(user, User))
         self.assertEqual(user.first_name, 'John')
-        self.assertEqual(str(user), 'john_lennon')
+        self.assertEqual(str(user.username), 'john_lennon')
 
     def test_registrate_user(self):
 
