@@ -3,7 +3,7 @@ from django.contrib.messages import get_messages
 from django.test import TestCase
 from django.urls import reverse
 
-from django.contrib.auth.models import User
+from task_manager.users.models import User
 
 
 class SetUpTestCase(TestCase):
